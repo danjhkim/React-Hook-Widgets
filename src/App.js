@@ -38,7 +38,7 @@ const options = [
 
 
 const App = () => {
-    const [selected, setSelected] = useState([]);
+    const [selected, setSelected] = useState(options[0]);
 
     return (
         <div className="ui container">
@@ -55,7 +55,7 @@ const App = () => {
             <Route path='/dropdown'>
                 <Dropdown
                     options={options}
-                    title={'Select a Color'}
+                    title='Select a Color'
                     selected={selected}
                     onSelected={setSelected}
                 />

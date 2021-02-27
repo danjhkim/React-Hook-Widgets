@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import axios from 'axios'
+
 
 const Accordion = ({ items }) => {
     const [activeIndex, setActiveIndex] = useState(null);
@@ -26,12 +26,8 @@ const Accordion = ({ items }) => {
         )
     })
 
-    return (
-        <>
-            <div className="ui styled accordion">{list}</div>
-        </>
+    return <div className="ui styled accordion">{list}</div>;
 
-    );
-}
+};
 
 export default Accordion;

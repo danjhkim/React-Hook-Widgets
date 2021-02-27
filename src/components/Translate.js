@@ -20,7 +20,6 @@ const options = [
 
 const Translate = () => {
     const [language, setLanguage] = useState(options[0]);
-
     const [text, setText] = useState('');
 
     return (
@@ -35,7 +34,7 @@ const Translate = () => {
                 selected={language}
                 onSelected={setLanguage}
                 options={options}
-                title={'Select a Language'}
+                title='Select a Language'
             />
             <br />
             <h3 className="ui header">Output</h3>

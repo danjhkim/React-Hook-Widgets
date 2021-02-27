@@ -1,9 +1,8 @@
-import { useEffect, useState } from 'react';
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 
 const Convert = ({ language, text }) => {
-    const [results, setResults] = useState(null);
+    const [results, setResults] = useState('');
     const [debouncedWord, setDebouncedWord] = useState(text);
 
     const translateFetch = async () => {
@@ -34,7 +33,7 @@ const Convert = ({ language, text }) => {
         return () => {
             clearTimeout(timerId);
         };
-    }, [text, language]);
+    }, [text]);
 
     useEffect(() => {
         if (debouncedWord) {

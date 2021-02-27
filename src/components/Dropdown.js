@@ -28,7 +28,7 @@ const Dropdown = ({ options, title, selected, onSelected }) => {
                     <div key={item.value} className="item disabled" onClick={() => {
                         onSelected(item)
                     }}>
-                        {item.title} *Selected*
+                        {item.title}
                     </div>
                 )
             } else {

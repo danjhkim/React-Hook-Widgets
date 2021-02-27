@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios";
-const createDOMPurify = require('dompurify');
-const { JSDOM } = require('jsdom');
-const window = new JSDOM('').window;
-const DOMPurify = createDOMPurify(window);
 
 const Search = () => {
     const [searchWord, setSearchWord] = useState('programming');
@@ -47,7 +43,7 @@ const Search = () => {
         setResults(response.data.query.search);
     }
 
-    const renderedResults = results.map(item => {
+    const renderedResults = results.map((item) => {
         return (
             <div className="item" key={item.pageid}>
                 <div className="right floated content">
@@ -62,16 +58,15 @@ const Search = () => {
                     <div className="header">
                         {item.title}
                     </div>
-                    <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item.snippet) }}></div>
+                    <span dangerouslySetInnerHTML={{ __html: item.snippet }}></span>
                 </div>
             </div>
         )
 
-
     });
 
     return (
-        <div className="container ui">
+        <span className="container ui">
             <div className="ui form">
                 <div className="field">
                     <label htmlFor="seek">Enter Search Term</label>
@@ -81,11 +76,8 @@ const Search = () => {
             <div className="ui celled list">
                 {renderedResults}
             </div>
-        </div>
+        </span>
     );
 }
 
 export default Search;
-
-
-// axios.get(`https://en.wikipedia.org/w/api.php?action=query&list=search&format=json&srsearch=${searchWord}`)
