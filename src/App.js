@@ -55,7 +55,7 @@ const App = () => {
             <Route path='/dropdown'>
                 <Dropdown
                     options={options}
-                    title='Select a Color'
+                    title='Select a Color please'
                     selected={selected}
                     onSelected={setSelected}
                 />
