@@ -57,7 +57,7 @@ const App = () => {
                     options={options}
                     title={'Select a Color'}
                     selected={selected}
-                    setSelected={setSelected}
+                    onSelected={setSelected}
                 />
             </Route>
         </div>
